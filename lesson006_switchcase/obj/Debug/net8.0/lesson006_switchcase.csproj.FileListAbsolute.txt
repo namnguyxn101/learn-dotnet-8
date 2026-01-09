@@ -1,0 +1,15 @@
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/bin/Debug/net8.0/lesson006_switchcase
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/bin/Debug/net8.0/lesson006_switchcase.deps.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/bin/Debug/net8.0/lesson006_switchcase.runtimeconfig.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/bin/Debug/net8.0/lesson006_switchcase.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/bin/Debug/net8.0/lesson006_switchcase.pdb
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/lesson006_switchcase.GeneratedMSBuildEditorConfig.editorconfig
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/lesson006_switchcase.AssemblyInfoInputs.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/lesson006_switchcase.AssemblyInfo.cs
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/lesson006_switchcase.csproj.CoreCompileInputs.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/lesson006_switchcase.sourcelink.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/lesson006_switchcase.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/refint/lesson006_switchcase.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/lesson006_switchcase.pdb
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/lesson006_switchcase.genruntimeconfig.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson006_switchcase/obj/Debug/net8.0/ref/lesson006_switchcase.dll
