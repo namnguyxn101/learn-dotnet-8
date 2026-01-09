@@ -1,0 +1,15 @@
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/bin/Debug/net8.0/lesson009_methods
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/bin/Debug/net8.0/lesson009_methods.deps.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/bin/Debug/net8.0/lesson009_methods.runtimeconfig.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/bin/Debug/net8.0/lesson009_methods.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/bin/Debug/net8.0/lesson009_methods.pdb
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/lesson009_methods.GeneratedMSBuildEditorConfig.editorconfig
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/lesson009_methods.AssemblyInfoInputs.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/lesson009_methods.AssemblyInfo.cs
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/lesson009_methods.csproj.CoreCompileInputs.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/lesson009_methods.sourcelink.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/lesson009_methods.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/refint/lesson009_methods.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/lesson009_methods.pdb
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/lesson009_methods.genruntimeconfig.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson009_methods/obj/Debug/net8.0/ref/lesson009_methods.dll
