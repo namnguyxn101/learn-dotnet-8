@@ -1,0 +1,15 @@
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/bin/Debug/net8.0/lesson008_array
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/bin/Debug/net8.0/lesson008_array.deps.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/bin/Debug/net8.0/lesson008_array.runtimeconfig.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/bin/Debug/net8.0/lesson008_array.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/bin/Debug/net8.0/lesson008_array.pdb
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/lesson008_array.GeneratedMSBuildEditorConfig.editorconfig
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/lesson008_array.AssemblyInfoInputs.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/lesson008_array.AssemblyInfo.cs
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/lesson008_array.csproj.CoreCompileInputs.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/lesson008_array.sourcelink.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/lesson008_array.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/refint/lesson008_array.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/lesson008_array.pdb
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/lesson008_array.genruntimeconfig.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson008_array/obj/Debug/net8.0/ref/lesson008_array.dll
