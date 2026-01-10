@@ -1,0 +1,15 @@
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/bin/Debug/net8.0/lesson014_inheritance
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/bin/Debug/net8.0/lesson014_inheritance.deps.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/bin/Debug/net8.0/lesson014_inheritance.runtimeconfig.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/bin/Debug/net8.0/lesson014_inheritance.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/bin/Debug/net8.0/lesson014_inheritance.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/lesson014_inheritance.GeneratedMSBuildEditorConfig.editorconfig
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/lesson014_inheritance.AssemblyInfoInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/lesson014_inheritance.AssemblyInfo.cs
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/lesson014_inheritance.csproj.CoreCompileInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/lesson014_inheritance.sourcelink.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/lesson014_inheritance.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/refint/lesson014_inheritance.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/lesson014_inheritance.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/lesson014_inheritance.genruntimeconfig.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson014_inheritance/obj/Debug/net8.0/ref/lesson014_inheritance.dll
