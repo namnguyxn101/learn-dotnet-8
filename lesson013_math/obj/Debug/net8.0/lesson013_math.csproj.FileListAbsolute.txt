@@ -1,0 +1,15 @@
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/lesson013_math.GeneratedMSBuildEditorConfig.editorconfig
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/lesson013_math.AssemblyInfoInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/lesson013_math.AssemblyInfo.cs
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/lesson013_math.csproj.CoreCompileInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/lesson013_math.sourcelink.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/bin/Debug/net8.0/lesson013_math
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/bin/Debug/net8.0/lesson013_math.deps.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/bin/Debug/net8.0/lesson013_math.runtimeconfig.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/bin/Debug/net8.0/lesson013_math.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/bin/Debug/net8.0/lesson013_math.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/lesson013_math.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/refint/lesson013_math.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/lesson013_math.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/lesson013_math.genruntimeconfig.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson013_math/obj/Debug/net8.0/ref/lesson013_math.dll
