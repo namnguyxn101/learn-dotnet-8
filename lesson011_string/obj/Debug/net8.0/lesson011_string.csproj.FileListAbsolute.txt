@@ -1,0 +1,15 @@
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/bin/Debug/net8.0/lesson011_string
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/bin/Debug/net8.0/lesson011_string.deps.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/bin/Debug/net8.0/lesson011_string.runtimeconfig.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/bin/Debug/net8.0/lesson011_string.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/bin/Debug/net8.0/lesson011_string.pdb
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/lesson011_string.GeneratedMSBuildEditorConfig.editorconfig
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/lesson011_string.AssemblyInfoInputs.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/lesson011_string.AssemblyInfo.cs
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/lesson011_string.csproj.CoreCompileInputs.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/lesson011_string.sourcelink.json
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/lesson011_string.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/refint/lesson011_string.dll
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/lesson011_string.pdb
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/lesson011_string.genruntimeconfig.cache
+/home/namnguyxn101/learn-tech/dotnet-8/lesson011_string/obj/Debug/net8.0/ref/lesson011_string.dll
