@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson001_helloworld/lesson001_helloworld.csproj",
-      "projectName": "lesson001_helloworld",
-      "projectPath": "/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson001_helloworld/lesson001_helloworld.csproj",
+      "projectUniqueName": "/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson012_struct_enum/lesson012_struct_enum.csproj",
+      "projectName": "lesson012_struct_enum",
+      "projectPath": "/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson012_struct_enum/lesson012_struct_enum.csproj",
       "packagesPath": "/home/namnguyxn101/.nuget/packages/",
-      "outputPath": "/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson001_helloworld/obj/",
+      "outputPath": "/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson012_struct_enum/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/namnguyxn101/.nuget/NuGet/NuGet.Config"

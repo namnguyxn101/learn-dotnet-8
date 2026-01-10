@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w9lLHRIdNxq4o6SWHtpcbBnRHeMeIl7wXDnralqKXNpQn38v9b6eYLZX4uBVX5pl3uJWDiDE8ro+Kp2Z8bcACQ==",
+  "dgSpecHash": "USSIjG8tcPBwT27z38hSmG0yAIupZ3pdAMPhnwmMtR7wKr0VeYHYrlgmtLvhNjxsQF5rTmE4s6jWXGJJ4nhbZg==",
   "success": true,
-  "projectFilePath": "/home/namnguyxn101/learn-tech/dotnet-8/lesson001_helloworld/lesson001_helloworld.csproj",
+  "projectFilePath": "/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson001_helloworld/lesson001_helloworld.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
