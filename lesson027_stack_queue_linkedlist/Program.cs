@@ -83,7 +83,7 @@ foreach (var bh in cacbaihoc)
 // var bh1 = cacbaihoc.Find("Bai hoc 1");
 // Console.WriteLine(bh1?.Value);
 
-LinkedListNode<string> bh1 = cacbaihoc?.First?.Next ?? new LinkedListNode<string>(" ");
+LinkedListNode<string> bh1 = cacbaihoc?.First?.Next ?? new LinkedListNode<string>("");
 Console.WriteLine(bh1.Value);
 
 LinkedListNode<string> bh4 = cacbaihoc?.Last?.Previous ?? new LinkedListNode<string>("");
