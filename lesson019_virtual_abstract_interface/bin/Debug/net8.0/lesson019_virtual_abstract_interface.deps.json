@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "lesson019_virtual_abstract_interface/1.0.0": {
+        "runtime": {
+          "lesson019_virtual_abstract_interface.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "lesson019_virtual_abstract_interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/bin/Debug/net8.0/lesson019_virtual_abstract_interface
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/bin/Debug/net8.0/lesson019_virtual_abstract_interface.deps.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/bin/Debug/net8.0/lesson019_virtual_abstract_interface.runtimeconfig.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/bin/Debug/net8.0/lesson019_virtual_abstract_interface.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/bin/Debug/net8.0/lesson019_virtual_abstract_interface.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/lesson019_virtual_abstract_interface.GeneratedMSBuildEditorConfig.editorconfig
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/lesson019_virtual_abstract_interface.AssemblyInfoInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/lesson019_virtual_abstract_interface.AssemblyInfo.cs
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/lesson019_virtual_abstract_interface.csproj.CoreCompileInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/lesson019_virtual_abstract_interface.sourcelink.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/lesson019_virtual_abstract_interface.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/refint/lesson019_virtual_abstract_interface.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/lesson019_virtual_abstract_interface.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/lesson019_virtual_abstract_interface.genruntimeconfig.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson019_virtual_abstract_interface/obj/Debug/net8.0/ref/lesson019_virtual_abstract_interface.dll
