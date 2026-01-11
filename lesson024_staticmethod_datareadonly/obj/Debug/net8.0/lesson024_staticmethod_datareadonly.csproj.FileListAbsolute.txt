@@ -1,0 +1,15 @@
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/bin/Debug/net8.0/lesson024_staticmethod_datareadonly
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/bin/Debug/net8.0/lesson024_staticmethod_datareadonly.deps.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/bin/Debug/net8.0/lesson024_staticmethod_datareadonly.runtimeconfig.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/bin/Debug/net8.0/lesson024_staticmethod_datareadonly.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/bin/Debug/net8.0/lesson024_staticmethod_datareadonly.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/lesson024_staticmethod_datareadonly.GeneratedMSBuildEditorConfig.editorconfig
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/lesson024_staticmethod_datareadonly.AssemblyInfoInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/lesson024_staticmethod_datareadonly.AssemblyInfo.cs
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/lesson024_staticmethod_datareadonly.csproj.CoreCompileInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/lesson024_staticmethod_datareadonly.sourcelink.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/lesson024_staticmethod_datareadonly.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/refint/lesson024_staticmethod_datareadonly.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/lesson024_staticmethod_datareadonly.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/lesson024_staticmethod_datareadonly.genruntimeconfig.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson024_staticmethod_datareadonly/obj/Debug/net8.0/ref/lesson024_staticmethod_datareadonly.dll
