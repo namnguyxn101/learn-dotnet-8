@@ -1,0 +1,15 @@
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/lesson026_list_sortedlist.GeneratedMSBuildEditorConfig.editorconfig
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/lesson026_list_sortedlist.AssemblyInfoInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/lesson026_list_sortedlist.AssemblyInfo.cs
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/lesson026_list_sortedlist.csproj.CoreCompileInputs.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/lesson026_list_sortedlist.sourcelink.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/bin/Debug/net8.0/lesson026_list_sortedlist
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/bin/Debug/net8.0/lesson026_list_sortedlist.deps.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/bin/Debug/net8.0/lesson026_list_sortedlist.runtimeconfig.json
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/bin/Debug/net8.0/lesson026_list_sortedlist.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/bin/Debug/net8.0/lesson026_list_sortedlist.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/lesson026_list_sortedlist.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/refint/lesson026_list_sortedlist.dll
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/lesson026_list_sortedlist.pdb
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/lesson026_list_sortedlist.genruntimeconfig.cache
+/home/namnguyxn101/learn-tech/learn-dotnet-8/lesson026_list_sortedlist/obj/Debug/net8.0/ref/lesson026_list_sortedlist.dll
