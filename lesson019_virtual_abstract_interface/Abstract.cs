@@ -16,7 +16,7 @@ namespace Abstract
     {
         public Samsung() => Price = 800;
 
-        // Nạp chồng phương thức abstract đc khai báo mà chưa định nghĩa trong lớp cơ sở
+        // Định nghĩa phương thức ProductInfo được khai báo trong Abstract Class
         public override void ProductInfo()
         {
             Console.WriteLine("Dien thoai Samsung");
