@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 
 public class Product
@@ -228,23 +229,82 @@ class Program
 
         // Example Linq API
         // In ra tên sản phẩm, tên thương hiệu, có giá [300; 400], giá giảm dần.
+        // products.Where(p => p.Price >= 300 && p.Price <= 400)
+        //         .OrderByDescending(p => p.Price)
+        //         .Join(brands, p => p.Brand, b => b.ID,
+        //         (product, brand) =>
+        //         {
+        //             return new
+        //             {
+        //             SanPham = product.Name,
+        //             Gia = product.Price,
+        //             ThuongHieu = brand.Name,
+        //             };
+        //         })
+        //         .ToList()
+        //         .ForEach(info =>
+        //         {
+        //             Console.WriteLine($"{info.SanPham, 15} {info.ThuongHieu, 15} {info.Gia, 5}");
+        //         });
+        // ==============================
 
-        var result = products.Where(p => p.Price >= 300 && p.Price <= 400)
-                             .OrderByDescending(p => p.Price)
-                             .Join(brands, p => p.Brand, b => b.ID,
-                             (product, brand) =>
-                             {
-                                 return new
-                                 {
-                                    SanPham = product.Name,
-                                    Gia = product.Price,
-                                    ThuongHieu = brand.Name,
-                                 };
-                             });
+        // Linq Query Syntax
+        // Lấy sản phẩm có giá <= 500 và màu xanh
+        // var qr = from product in products
+        //          from colors in product.Colors
+        //          where product.Price <= 500 && colors == "Xanh"
+        //          orderby product.Price descending
+        //          select new
+        //          {
+        //            Ten = product.Name,
+        //            Gia = product.Price,
+        //            CacMau = product.Colors,  
+        //          };
 
-        foreach (var item in result)
+        // qr.ToList().ForEach(info =>
+        // {
+        //     Console.WriteLine($"{info.Ten, 15} {info.Gia, 5} {string.Join(',', info.CacMau)}");
+        // });
+        // ==============================
+
+        // Linq Query Syntax
+        // Nhóm sản phẩm theo giá
+        // var qr = from p in products
+        //          group p by p.Price into gr
+        //          orderby gr.Key
+        //          let sl = "So luong la " + gr.Count()
+        //          select new
+        //          {
+        //              Gia = gr.Key,
+        //              CacSanPham = gr.ToList(),
+        //              SoLuong = sl,
+        //          };
+
+        // qr.ToList().ForEach(info =>
+        // {
+        //     Console.WriteLine(info.Gia);
+        //     Console.WriteLine(info.SoLuong);
+
+        //     info.CacSanPham.ToList().ForEach(p => Console.WriteLine(p));
+        // });
+        // ==============================
+
+        // Linq Query Syntax
+        // Lấy thông tin sản phẩm gồm tên sản phẩm, giá, tên thương hiệu (ko có thì xuất No Brand)
+        var qr = from product in products
+                 join brand in brands on product.Brand equals brand.ID into t
+                 from b in t.DefaultIfEmpty()
+                 select new
+                 {
+                    Ten = product.Name,
+                    Gia = product.Price,
+                    ThuongHieu = (b != null) ? b.Name : "No Brand",
+                 };
+
+        qr.ToList().ForEach(info =>
         {
-            Console.WriteLine(item);
-        }
+            Console.WriteLine($"{info.Ten, 15} {info.ThuongHieu, 15} {info.Gia, 5}");
+        });
+        // ==============================
     }
 }
