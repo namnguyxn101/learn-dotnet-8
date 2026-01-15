@@ -78,3 +78,12 @@ Lúc này có thể sử dụng **Factory** trên để đăng ký IClassB:
 ```cs
 services.AddSingleton<IClassB>(CreateB2Factory);
 ```
+
+## Sử dụng Options khởi tạo dịch vụ trong Dependency Injection
+Khi một dịch vụ đăng ký trong DI, nếu nó cần các tham số để khởi tạo thì ta có thể Inject các tham số khởi tạo là các đối tượng như cách làm ở trên. Tuy nhiên để tách bạch giữa các dịch vụ và các thiết lập truyền vào để khởi tạo dịch vụ thì trong **ServiceCollection** hỗ trợ sử dụng giao diện **IOptions**.
+
+Trước tiên cần thêm package `Microsoft.Extensions.Options`. Mở terminal chạy lệnh:
+```bash
+dotnet add package Microsoft.Extensions.Options
+```
+Sử dụng namespace: `using Microsoft.Extensions.Options`

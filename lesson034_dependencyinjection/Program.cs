@@ -4,6 +4,7 @@
 
 using System.Reflection.Metadata;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 interface IClassB
 {
@@ -87,51 +88,45 @@ class ClassB2 : IClassB
     }
 }
 
+public class MyServiceOptions
+{
+    public string data1 { get; set; } = string.Empty;
+    public int data2 { get; set; }
+}
+
+public class MyService
+{
+    public string data1 { get; set; } = string.Empty;
+    public int data2 { get; set; }
+
+    public MyService(IOptions<MyServiceOptions> options)
+    {
+        var _options = options.Value;
+        data1 = _options.data1;
+        data2 = _options.data2;
+    }
+    
+    public void PrintData() => Console.WriteLine($"{data1} / {data2}");
+}
+
 class Program
 {
-    public static IClassB CreateB2(IServiceProvider provider)
-    {
-        var b2 = new ClassB2(
-            provider.GetService<IClassC>() ?? new ClassC(),
-            "Thực hiện trong ClassB2"
-        );
-
-        return b2;
-    }
-
     static void Main()
     {
         var services = new ServiceCollection();
 
-        // ClassA
-        // IClassB, ClassB, ClassB1
-        // IClassC, ClassC, ClassC1
-
-        services.AddSingleton<ClassA, ClassA>();
-
-        // Sử dụng Delegate
-        // services.AddSingleton<IClassB>(
-        //     (IServiceProvider provider) =>
-        //     {
-        //         var b2 = new ClassB2(
-        //             provider.GetService<IClassC>() ?? new ClassC(),
-        //             "Thực hiện trong ClassB2"
-        //         );
-
-        //         return b2;
-        //     }
-        // );
-
-        // Sử dụng Factory
-        // services.AddSingleton<IClassB>(CreateB2);
-        // Hoặc có thể viết gọn là:
-        services.AddSingleton(CreateB2);
-
-        services.AddSingleton<IClassC, ClassC1>();
+        services.AddSingleton<MyService>();
+        services.Configure<MyServiceOptions>(
+            (MyServiceOptions options) =>
+            {
+                options.data1 = "Xin chao cac ban";
+                options.data2 = 2026;
+            }
+        );
 
         var provider = services.BuildServiceProvider();
+        var myservice = provider.GetService<MyService>();
 
-        var a = provider.GetService<ClassA>();
-        a?.ActionA();
+        myservice?.PrintData();
     }
 }
