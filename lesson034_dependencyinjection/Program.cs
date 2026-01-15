@@ -76,55 +76,17 @@ class Program
     {
         var services = new ServiceCollection();
 
-        // Đăng ký các dịch vụ ...
+        // ClassA
+        // IClassB, ClassB, ClassB1
         // IClassC, ClassC, ClassC1
 
-        // // Singleton
-        // services.AddSingleton<IClassC, ClassC1>();
-
-        // var provider = services.BuildServiceProvider();
-
-        // // var classc = provider.GetService<IClassC>();
-
-        // for (int i = 0; i < 5; i++)
-        // {
-        //     IClassC? c = provider.GetService<IClassC>();
-        //     Console.WriteLine(c?.GetHashCode());
-        // }
-        // ===================================
-
-        // Transient
-        // services.AddTransient<IClassC, ClassC>();
-
-        // var provider = services.BuildServiceProvider();
-
-        // for (int i = 0; i < 5; i++)
-        // {
-        //     IClassC? c = provider.GetService<IClassC>();
-        //     Console.WriteLine(c?.GetHashCode());
-        // }
-        // ===================================
-
-        // Scoped
-        services.AddScoped<IClassC, ClassC>();
+        services.AddSingleton<ClassA, ClassA>();
+        services.AddSingleton<IClassB, ClassB1>();
+        services.AddSingleton<IClassC, ClassC1>();
 
         var provider = services.BuildServiceProvider();
 
-        for (int i = 0; i < 5; i++)
-        {
-            IClassC? c = provider.GetService<IClassC>();
-            Console.WriteLine(c?.GetHashCode());
-        }
-
-        using (var scope = provider.CreateScope())
-        {
-            var provider1 = scope.ServiceProvider;
-
-            for (int i = 0; i < 5; i++)
-            {
-                IClassC? c = provider1.GetService<IClassC>();
-                Console.WriteLine(c?.GetHashCode());
-            }
-        }
+        var a = provider.GetService<ClassA>();
+        a?.ActionA();
     }
 }
