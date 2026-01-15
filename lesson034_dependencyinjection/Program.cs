@@ -1,5 +1,9 @@
 ﻿// Dependency - Phụ thuộc
 // Inverse of Control (IoC) / Dependency Inverse
+// Một trong những phương pháp áp dụng nguyên tắc IoC này --> Dependency Injection (DI)
+
+using System.Reflection.Metadata;
+using Microsoft.Extensions.DependencyInjection;
 
 interface IClassB
 {
@@ -70,10 +74,57 @@ class Program
 {
     static void Main()
     {
-        IClassC objectC = new ClassC1();
-        IClassB objectB = new ClassB1(objectC);
-        ClassA objectA = new ClassA(objectB);
+        var services = new ServiceCollection();
 
-        objectA.ActionA();
+        // Đăng ký các dịch vụ ...
+        // IClassC, ClassC, ClassC1
+
+        // // Singleton
+        // services.AddSingleton<IClassC, ClassC1>();
+
+        // var provider = services.BuildServiceProvider();
+
+        // // var classc = provider.GetService<IClassC>();
+
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     IClassC? c = provider.GetService<IClassC>();
+        //     Console.WriteLine(c?.GetHashCode());
+        // }
+        // ===================================
+
+        // Transient
+        // services.AddTransient<IClassC, ClassC>();
+
+        // var provider = services.BuildServiceProvider();
+
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     IClassC? c = provider.GetService<IClassC>();
+        //     Console.WriteLine(c?.GetHashCode());
+        // }
+        // ===================================
+
+        // Scoped
+        services.AddScoped<IClassC, ClassC>();
+
+        var provider = services.BuildServiceProvider();
+
+        for (int i = 0; i < 5; i++)
+        {
+            IClassC? c = provider.GetService<IClassC>();
+            Console.WriteLine(c?.GetHashCode());
+        }
+
+        using (var scope = provider.CreateScope())
+        {
+            var provider1 = scope.ServiceProvider;
+
+            for (int i = 0; i < 5; i++)
+            {
+                IClassC? c = provider1.GetService<IClassC>();
+                Console.WriteLine(c?.GetHashCode());
+            }
+        }
     }
 }
