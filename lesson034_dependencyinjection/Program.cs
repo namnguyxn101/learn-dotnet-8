@@ -3,6 +3,7 @@
 // Một trong những phương pháp áp dụng nguyên tắc IoC này --> Dependency Injection (DI)
 
 using System.Reflection.Metadata;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
@@ -113,16 +114,23 @@ class Program
 {
     static void Main()
     {
+        ConfigurationBuilder configBuilder = new ConfigurationBuilder();
+        configBuilder.SetBasePath(Directory.GetCurrentDirectory());
+        configBuilder.AddJsonFile("config.json");
+
+        IConfigurationRoot configRoot = configBuilder.Build();
+
+        var sectionMyServiceOptions = configRoot.GetSection("MyServiceOptions");
+
+        // var data1 = configRoot
+        //                 .GetSection("MyServiceOptions")
+        //                 .GetSection("data1").Value;
+
+        
         var services = new ServiceCollection();
 
         services.AddSingleton<MyService>();
-        services.Configure<MyServiceOptions>(
-            (MyServiceOptions options) =>
-            {
-                options.data1 = "Xin chao cac ban";
-                options.data2 = 2026;
-            }
-        );
+        services.Configure<MyServiceOptions>(sectionMyServiceOptions);
 
         var provider = services.BuildServiceProvider();
         var myservice = provider.GetService<MyService>();

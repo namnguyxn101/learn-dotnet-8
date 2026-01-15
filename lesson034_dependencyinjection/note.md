@@ -87,3 +87,26 @@ Trước tiên cần thêm package `Microsoft.Extensions.Options`. Mở terminal
 dotnet add package Microsoft.Extensions.Options
 ```
 Sử dụng namespace: `using Microsoft.Extensions.Options`
+
+## Sử dụng cấu hình từ File cho Dependency Injection
+Ở ví dụ trên, các giá trị dữ liệu trong MyServiceOptions (như data1, data2) có thể lưu ở file sau đó nạp vào khi chương trình thực thi. Các file cấu hình này hỗ trợ nhiều định dạng như XML, INI, JSON ... (cần cài đặt gói tương ứng)
+
+Trước tiên thêm package `Microsoft.Extensions.Configuration` và `Microsoft.Extensions.Options.ConfigurationExtensions`. Mở terminal chạy lệnh:
+```bash
+dotnet add package Microsoft.Extensions.Configuration
+dotnet add package Microsoft.Extensions.Options.ConfigurationExtensions
+```
+Sau đó, muốn dùng định dạng nào thì thêm Package tương ứng:
+
+```bash
+dotnet add package Microsoft.Extensions.Configuration.Json
+# or
+dotnet add package Microsoft.Extensions.Configuration.Ini
+# or
+dotnet add package Microsoft.Extensions.Configuration.Xml
+```
+Sử dụng namespace với kiểu file Json
+```cs
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
+```
