@@ -42,9 +42,39 @@ Trước tiên, phải có đối tượng **ServiceCollection** để đăng k�
 Để có được **provider** ta phải gọi `services.BuildServiceProvider()`.
 
 ---
-
 ### ServiceLifetime - Vòng đời của dịch vụ
 Khi đăng ký dịch vụ vào **ServiceCollection** thì các dịch vụ đó tồn tại bao lâu phụ thuộc vào các kiểu sau:
 - **Scoped**: Một bản thực thi (instance) của dịch vụ (Class) được tạo ra cho mỗi phạm vi, tức là tồn tại cùng với sự tồn tại của một đối tượng kiểu ServiceScope (đối tượng này tạo bằng cách gọi ServiceProvider.CreateScope, đối tượng này hủy thì dịch vụ cũng bị hủy).
 - **Singleton**: Duy nhất một phiên bản thực thi (Instance of Class) (dịch vụ) được tạo ra cho hết vòng đợi của ServiceProvider.
 - **Transient**: Một phiên bản của dịch vụ được tạo mỗi khi được yêu cầu.
+
+### Sử dụng Delegate / Factory để đăng ký dịch vụ
+---
+#### Sử dụng Delegate đăng ký
+Các phương thức để đăng dịch vụ vào ServiceCollection như AddScoped, AddSingleton, AddTransient còn có phiên bản (nạp chồng) nó nhận tham số là delegate trả về đối tượng dịch vụ có kiểu ImplementationType. Ví dụ AddSingleton, cú pháp đó là:
+```cs
+services.AddSingleton<ServiceType>(
+    (IServiceProvider provider) =>
+    {
+        // các chỉ thị
+        // ...
+        return (đối tượng kiểu ImplementationType);
+    }
+);
+```
+---
+#### Sử dụng Factory đăng ký
+Có thể khai báo Delegate trên thành 1 phương thức, một phương thức cung cấp cơ chế tạo ra đối tượng mong muốn gọi là **Factory**.
+```cs
+// Factory nhận tham số là IServiceProvider và trả về đối tượng địch vụ cần tạo
+public static ClassB2 CreateB2Factory(IServiceProvider serviceprovider)
+{
+    var service_c = serviceprovider.GetService<IClassC>();
+    var sv = new ClassB2(service_c, "Thực hiện trong ClassB2");
+    return sv;
+}
+```
+Lúc này có thể sử dụng **Factory** trên để đăng ký IClassB:
+```cs
+services.AddSingleton<IClassB>(CreateB2Factory);
+```
