@@ -113,6 +113,68 @@ class Program
         }
     }
 
+    public class MyHttpClientHandler : HttpClientHandler
+    {
+        public MyHttpClientHandler(CookieContainer cookie_container)
+        {
+
+            CookieContainer = cookie_container;     // Thay thế CookieContainer mặc định
+            AllowAutoRedirect = false;                // không cho tự động Redirect
+            AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
+            UseCookies = true;
+        }
+        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request,
+                                                                     CancellationToken cancellationToken)
+        {
+            Console.WriteLine("Bất đầu kết nối " + request.RequestUri?.ToString());
+            // Thực hiện truy vấn đến Server
+            var response = await base.SendAsync(request, cancellationToken);
+            Console.WriteLine("Hoàn thành tải dữ liệu");
+            return response;
+        }
+    }
+
+    public class ChangeUri : DelegatingHandler
+    {
+        public ChangeUri(HttpMessageHandler innerHandler) : base(innerHandler) { }
+
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request,
+                                                               CancellationToken cancellationToken)
+        {
+            var host = request.RequestUri?.Host.ToLower();
+            Console.WriteLine($"Check in  ChangeUri - {host}");
+            if (host != null && host.Contains("google.com"))
+            {
+                // Đổi địa chỉ truy cập từ google.com sang github
+                request.RequestUri = new Uri("https://github.com/");
+            }
+            // Chuyển truy vấn cho base (thi hành InnerHandler)
+            return base.SendAsync(request, cancellationToken);
+        }
+    }
+
+
+    public class DenyAccessFacebook : DelegatingHandler
+    {
+        public DenyAccessFacebook(HttpMessageHandler innerHandler) : base(innerHandler) { }
+
+        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request,
+                                                                     CancellationToken cancellationToken)
+        {
+
+            var host = request.RequestUri?.Host.ToLower();
+            Console.WriteLine($"Check in DenyAccessFacebook - {host}");
+            if (host != null && host.Contains("facebook.com"))
+            {
+                var response = new HttpResponseMessage(HttpStatusCode.OK);
+                response.Content = new ByteArrayContent(Encoding.UTF8.GetBytes("Không được truy cập"));
+                return await Task.FromResult<HttpResponseMessage>(response);
+            }
+            // Chuyển truy vấn cho base (thi hành InnerHandler)
+            return await base.SendAsync(request, cancellationToken);
+        }
+    }
+
     static async Task Main()
     {
         // var url = "https://xuanthulab.net";
@@ -135,18 +197,17 @@ class Program
         // await DownloadStream(url, "pic-2.png");
         // =====================================
 
-        string url = "https://postman-echo.com/post";
+        string url = "https://www.google.com";
 
         var cookie = new CookieContainer();
 
-        using var handler = new SocketsHttpHandler();
-        handler.AllowAutoRedirect = true;
-        handler.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
-        handler.UseCookies = true;
-        handler.CookieContainer = cookie;
+        // Tạo chuỗi handler
+        var bottomHandler = new MyHttpClientHandler(cookie);
+        var changeUriHandler = new ChangeUri(bottomHandler);
+        var DenyAccessFacebookHandler = new DenyAccessFacebook(changeUriHandler);
 
-        using var httpClient = new HttpClient();
-        
+        using var httpClient = new HttpClient(DenyAccessFacebookHandler);
+
         using var httpRequestMessage = new HttpRequestMessage();
         httpRequestMessage.Method = HttpMethod.Post;
         httpRequestMessage.RequestUri = new Uri(url);
