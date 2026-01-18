@@ -10,6 +10,7 @@
 // DemoPing.RunDemo();
 // =========================================
 
+using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 
@@ -134,45 +135,40 @@ class Program
         // await DownloadStream(url, "pic-2.png");
         // =====================================
 
+        string url = "https://postman-echo.com/post";
+
+        var cookie = new CookieContainer();
+
+        using var handler = new SocketsHttpHandler();
+        handler.AllowAutoRedirect = true;
+        handler.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
+        handler.UseCookies = true;
+        handler.CookieContainer = cookie;
+
         using var httpClient = new HttpClient();
-
+        
         using var httpRequestMessage = new HttpRequestMessage();
-
         httpRequestMessage.Method = HttpMethod.Post;
-        httpRequestMessage.RequestUri = new Uri("https://postman-echo.com/post");
+        httpRequestMessage.RequestUri = new Uri(url);
         httpRequestMessage.Headers.Add("User-Agent", "Mozilla/5.0");
 
-        // var parameters = new List<KeyValuePair<string, string>>
-        // {
-        //     new KeyValuePair<string, string>("key1", "value1"),
-        //     new KeyValuePair<string, string>("key2", "value2-1"),
-        //     new KeyValuePair<string, string>("key2", "value2-2")
-        // };
-        // var content = new FormUrlEncodedContent(parameters);
-        // -----------------------
+        var parameters = new List<KeyValuePair<string, string>>
+        {
+            new KeyValuePair<string, string>("key1", "value1"),
+            new KeyValuePair<string, string>("key2", "value2-1"),
+            new KeyValuePair<string, string>("key2", "value2-2")
+        };
 
-        // string data = @"{
-        //     ""key1"": ""value1"",
-        //     ""key2"": [""value2-1"", ""value2-2""]
-        // }";
-        // var content = new StringContent(data, Encoding.UTF8, "application/json");
-        // -----------------------
+        httpRequestMessage.Content = new FormUrlEncodedContent(parameters);
 
-        using var content = new MultipartFormDataContent();
+        using var response = await httpClient.SendAsync(httpRequestMessage);
 
-        using Stream fileStream = File.OpenRead("1.txt");
-        var fileUpload = new StreamContent(fileStream);
-        content.Add(fileUpload, "fileupload", "abc.xyz");
+        cookie.GetCookies(new Uri(url)).ToList().ForEach(c =>
+        {
+            Console.WriteLine($"{c.Name} : {c.Value}");
+        });
 
-        content.Add(new StringContent("value1"), "key1");
-
-        httpRequestMessage.Content = content;
-
-        using var httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
-
-        ShowHeaders(httpResponseMessage.Headers);
-
-        var html = await httpResponseMessage.Content.ReadAsStringAsync();
+        var html = await response.Content.ReadAsStringAsync();
         Console.WriteLine(html);
     }
 }
