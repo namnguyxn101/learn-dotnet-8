@@ -11,6 +11,7 @@
 // =========================================
 
 using System.Net.Http.Headers;
+using System.Text;
 
 class Program
 {
@@ -96,7 +97,7 @@ class Program
             do
             {
                 int bytesRead = await stream.ReadAsync(buffer, 0, SIZEBUFFER);
-                
+
                 if (bytesRead == 0) endread = true;
                 else
                 {
@@ -128,8 +129,50 @@ class Program
         // stream.Write(bytes, 0, bytes.Length);
         // =====================================
 
-        var url = "https://raw.githubusercontent.com/xuanthulabnet/jekyll-example/master/images/jekyll-01.png";
+        // var url = "https://raw.githubusercontent.com/xuanthulabnet/jekyll-example/master/images/jekyll-01.png";
 
-        await DownloadStream(url, "pic-2.png");
+        // await DownloadStream(url, "pic-2.png");
+        // =====================================
+
+        using var httpClient = new HttpClient();
+
+        using var httpRequestMessage = new HttpRequestMessage();
+
+        httpRequestMessage.Method = HttpMethod.Post;
+        httpRequestMessage.RequestUri = new Uri("https://postman-echo.com/post");
+        httpRequestMessage.Headers.Add("User-Agent", "Mozilla/5.0");
+
+        // var parameters = new List<KeyValuePair<string, string>>
+        // {
+        //     new KeyValuePair<string, string>("key1", "value1"),
+        //     new KeyValuePair<string, string>("key2", "value2-1"),
+        //     new KeyValuePair<string, string>("key2", "value2-2")
+        // };
+        // var content = new FormUrlEncodedContent(parameters);
+        // -----------------------
+
+        // string data = @"{
+        //     ""key1"": ""value1"",
+        //     ""key2"": [""value2-1"", ""value2-2""]
+        // }";
+        // var content = new StringContent(data, Encoding.UTF8, "application/json");
+        // -----------------------
+
+        using var content = new MultipartFormDataContent();
+
+        using Stream fileStream = File.OpenRead("1.txt");
+        var fileUpload = new StreamContent(fileStream);
+        content.Add(fileUpload, "fileupload", "abc.xyz");
+
+        content.Add(new StringContent("value1"), "key1");
+
+        httpRequestMessage.Content = content;
+
+        using var httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
+
+        ShowHeaders(httpResponseMessage.Headers);
+
+        var html = await httpResponseMessage.Content.ReadAsStringAsync();
+        Console.WriteLine(html);
     }
 }
