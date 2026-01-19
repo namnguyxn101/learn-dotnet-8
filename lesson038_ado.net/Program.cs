@@ -1,5 +1,6 @@
 ﻿using System.Data.Common;
 using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 class Program
 {
@@ -7,24 +8,25 @@ class Program
     {
         // string sqlConnection = "Data Source=localhost,1433;Initial Catalog=xtlab;User ID=sa;Password=Password123;TrustServerCertificate=True";
 
-        var sqlStringBuilder = new SqlConnectionStringBuilder();
-        sqlStringBuilder["Server"] = "localhost,1433";
+        var sqlStringBuilder = new MySqlConnectionStringBuilder();
+        sqlStringBuilder["Server"] = "localhost";
+        sqlStringBuilder["Port"] = "3307";
         sqlStringBuilder["Database"] = "xtlab";
-        sqlStringBuilder["UID"] = "sa";
-        sqlStringBuilder["PWD"] = "Password123";
-        sqlStringBuilder["TrustServerCertificate"] = true;
+        sqlStringBuilder["UID"] = "root";
+        sqlStringBuilder["PWD"] = "abc123";
+        // sqlStringBuilder["TrustServerCertificate"] = true;
 
         string sqlConnection = sqlStringBuilder.ToString();
 
-        using var conn = new SqlConnection(sqlConnection);
+        using var conn = new MySqlConnection(sqlConnection);
 
         // Console.WriteLine(conn.State);
 
         conn.Open();
 
-        using DbCommand command = new SqlCommand();
+        using DbCommand command = new MySqlCommand();
         command.Connection = conn;
-        command.CommandText = "SELECT TOP (5) * FROM Sanpham;";
+        command.CommandText = "SELECT * FROM Sanpham LIMIT 0, 10;";
 
         var dataReader = command.ExecuteReader();
         
