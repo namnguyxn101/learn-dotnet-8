@@ -1,4 +1,5 @@
-﻿using System.Data.Common;
+﻿using System.Data;
+using System.Data.Common;
 using Microsoft.Data.SqlClient;
 using MySql.Data.MySqlClient;
 
@@ -25,51 +26,24 @@ class Program
 
         using var command = new SqlCommand();
         command.Connection = conn;
-        command.CommandText = "SELECT * FROM Danhmuc WHERE DanhmucID >= @DanhmucID;";
+        command.CommandText = "getproductinfo";
+        command.CommandType = CommandType.StoredProcedure;
 
-        // var danhMucId = new SqlParameter("@DanhmucID", 5);
-        // command.Parameters.Add(danhMucId);
-        // // Gán lại giá trị khác
-        // danhMucId.Value = 3;
-        // ---> Gọn hơn
-        var danhMucId = command.Parameters.AddWithValue("@DanhmucID", 5);
-        danhMucId.Value = 3;
+        var id = new SqlParameter("@id", 3);
 
-        // =-=-=-=- ExecuteReader : Dùng khi cần kết quả trả về nhiều dòng -=-=-=-=
-        // using var dataReader = command.ExecuteReader();
+        command.Parameters.Add(id);
 
-        // if (dataReader.HasRows)
-        // {
-        //     while (dataReader.Read())
-        //     {
-        //         // Nếu biết type của field và thứ tự thì dùng (Theo thứ tự):
-        //         var id = dataReader.GetInt32(0);
+        var dataReader = command.ExecuteReader();
 
-        //         // Nếu biết tên của field thì dùng:
-        //         var tenDanhMuc = dataReader["TenDanhMuc"];
+        if (dataReader.HasRows)
+        {
+            dataReader.Read();
 
-        //         // Nếu chỉ biết thứ tự thì có thể dùng:
-        //         var moTa = dataReader[2];
+            var tenSanPham = dataReader["TenSanPham"];
+            var tenDanhMuc = dataReader["TenDanhMuc"];
 
-        //         Console.WriteLine($"{id} - {tenDanhMuc} - {moTa}");
-        //     }
-        // }
-        // else
-        // {
-        //     Console.WriteLine("No data");
-        // }
-
-        // =-=-=-=- ExecuteScalar : Trả về 1 giá trị (row 1, column 1) -=-=-=-=
-        // var returnValue = command.ExecuteScalar();
-        // Console.WriteLine(returnValue);
-
-        // =-=-=-=- ExecuteNonQuery : Trả về số dòng bị ảnh hưởng (Insert, Update, Delete) -=-=-=-=
-        command.CommandText = "INSERT INTO Shippers (Hoten, Sodienthoai) VALUES (@Hoten, @Sodienthoai)";
-        command.Parameters.AddWithValue("@Hoten", "Abc");
-        command.Parameters.AddWithValue("@Sodienthoai", 123456);
-        
-        var kq = command.ExecuteNonQuery();
-        Console.WriteLine($"So dong bi anh huong: {kq}");
+            Console.WriteLine($"{tenSanPham} - {tenDanhMuc}");
+        }
 
         conn.Close();
     }
