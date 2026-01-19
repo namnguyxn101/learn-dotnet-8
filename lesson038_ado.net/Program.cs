@@ -16,7 +16,7 @@ class Program
         
         Console.WriteLine();
 
-        int numberCols = table.Rows.Count;
+        int numberCols = table.Columns.Count;
 
         foreach (DataRow row in table.Rows)
         {
