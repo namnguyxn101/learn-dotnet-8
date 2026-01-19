@@ -5,6 +5,33 @@ using MySql.Data.MySqlClient;
 
 class Program
 {
+    static void ShowDataTable(DataTable table)
+    {
+        Console.WriteLine($"Ten bang: {table.TableName}");
+
+        foreach (DataColumn col in table.Columns)
+        {
+            Console.Write($"{col.ColumnName, -20}");
+        }
+        
+        Console.WriteLine();
+
+        int numberCols = table.Rows.Count;
+
+        foreach (DataRow row in table.Rows)
+        {
+            for (int i = 0; i < numberCols; i++)
+            {
+                Console.Write($"{row[i], -20}");
+            }
+            
+            // Console.Write($"{row[0], -20}");
+            // Console.Write($"{row["HoTen"], -20}");
+            // Console.Write($"{row["Tuoi"], -20}");
+            Console.WriteLine();
+        }
+    }
+    
     static void Main()
     {
         // string sqlConnection = "Data Source=localhost,1433;Initial Catalog=xtlab;User ID=sa;Password=Password123;TrustServerCertificate=True";
@@ -24,26 +51,21 @@ class Program
 
         conn.Open();
 
-        using var command = new SqlCommand();
-        command.Connection = conn;
-        command.CommandText = "getproductinfo";
-        command.CommandType = CommandType.StoredProcedure;
+        var dataSet = new DataSet();
+        var table = new DataTable("MyTable");
 
-        var id = new SqlParameter("@id", 3);
+        // Thêm bảng vào data set
+        dataSet.Tables.Add(table);
 
-        command.Parameters.Add(id);
+        table.Columns.Add("STT");
+        table.Columns.Add("HoTen");
+        table.Columns.Add("Tuoi");
 
-        var dataReader = command.ExecuteReader();
+        table.Rows.Add(1, "Nguyen Phuong Nam", 22);
+        table.Rows.Add(2, "Hoang Van Son", 25);
+        table.Rows.Add(3, "Ha Thi Tuong Vy", 21);
 
-        if (dataReader.HasRows)
-        {
-            dataReader.Read();
-
-            var tenSanPham = dataReader["TenSanPham"];
-            var tenDanhMuc = dataReader["TenDanhMuc"];
-
-            Console.WriteLine($"{tenSanPham} - {tenDanhMuc}");
-        }
+        ShowDataTable(table);
 
         conn.Close();
     }
