@@ -17,5 +17,7 @@ namespace ef
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(connectionString);
         }
+
+        public DbSet<Product> Products { get; set; }
     }
 }
