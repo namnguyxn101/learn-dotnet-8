@@ -3,23 +3,23 @@ using Microsoft.Extensions.Logging;
 
 namespace ef
 {
-    public class ProductDbContext : DbContext
+    public class ShopContext : DbContext
     {
         public static ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
         {
             builder.AddFilter(DbLoggerCategory.Query.Name, LogLevel.Information);
-            builder.AddFilter(DbLoggerCategory.Database.Name, LogLevel.Information);
+            // builder.AddFilter(DbLoggerCategory.Database.Name, LogLevel.Information);
             builder.AddConsole();
         });
-        
+
         private const string connectionString = @"
             Data Source = localhost,1433;
-            Initial Catalog = data01;
+            Initial Catalog = shopdata;
             User ID = sa;
             Password = Password123;
             TrustServerCertificate = true;
         ";
-        
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -28,5 +28,7 @@ namespace ef
         }
 
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }
