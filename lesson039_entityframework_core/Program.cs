@@ -155,7 +155,7 @@ namespace ef
 
             // await InsertProduct();
             // await RenameProduct(1, "iPhone");
-            await DeleteProduct(5);
+            // await DeleteProduct(5);
             await ReadProducts();
         }
     }
