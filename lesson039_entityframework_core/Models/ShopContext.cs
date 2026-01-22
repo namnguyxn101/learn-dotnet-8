@@ -27,6 +27,52 @@ namespace ef
             optionsBuilder.UseSqlServer(connectionString);
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Fluent API
+
+            // Cách 1
+            // var entity = modelBuilder.Entity(typeof(Product));
+
+            // Cách 2
+            // var entity = modelBuilder.Entity<Product>();
+
+            // Cách 3
+            // modelBuilder.Entity<Product>(entity =>
+            // {
+                
+            // });
+            // -------------------------------------
+
+            modelBuilder.Entity<Product>(entity =>
+            {
+                // Table mapping
+                entity.ToTable("Products");
+
+                // PK
+                entity.HasKey(p => p.ProductId);
+
+                // Index
+                entity.HasIndex(p => p.Price).HasDatabaseName("index-products-price");
+
+                // Relative (One to Many)
+                // entity.HasOne(p => p.Category)
+                //       .WithMany()
+                //       .HasForeignKey("CateID")
+                //       .OnDelete(DeleteBehavior.Cascade)
+                //       .HasConstraintName("FK_Products_Categories");
+
+
+                entity.HasOne(p => p.Category)
+                      .WithMany(c => c.Products) // Collect navigation
+                      .HasForeignKey("CateID")
+                      .OnDelete(DeleteBehavior.Cascade)
+                      .HasConstraintName("FK_Products_Categories");
+            });
+        }
+
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Category> Categories { get; set; }

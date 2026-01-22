@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ef
 {
-    [Table("Products")]
+    // [Table("Products")]
     public class Product
     {
-        [Key]
+        // [Key]
         public int ProductId { get; set; }
 
         [Required]
@@ -24,8 +24,9 @@ namespace ef
         // --> CateID NOTE NULL
         // --> FK ON DELETE ON CASCADE
 
-        [ForeignKey("CateID")]
+        // [ForeignKey("CateID")]
         // [Required]
+        // [InverseProperty("Products")]
         public Category? Category { get; set; } // FK
 
         public void PrintInfo() => Console.WriteLine($"{ProductId} - {Name} - {Price} - {CateID}");
