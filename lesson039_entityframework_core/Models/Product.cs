@@ -28,6 +28,6 @@ namespace ef
         // [Required]
         public Category? Category { get; set; } // FK
 
-        public void PrintInfo() => Console.WriteLine($"{ProductId} - {Name} - {Price}");
+        public void PrintInfo() => Console.WriteLine($"{ProductId} - {Name} - {Price} - {CateID}");
     }
 }

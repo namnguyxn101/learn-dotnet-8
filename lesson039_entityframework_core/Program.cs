@@ -66,8 +66,44 @@ namespace ef
         {
             // await DropDatabase();
             // await CreateDatabase();
+            // await InsertData();
+            // -----------------------------------
 
-            await InsertData();
+            // using var dbContext = new ShopContext();
+
+            // var product = await (from p in dbContext.Products where p.ProductId == 3 select p).FirstOrDefaultAsync();
+
+            // if (product != null)
+            // {
+            //     product.PrintInfo();
+
+            //     var e = dbContext.Entry(product);
+            //     e.Reference(p => p.Category).Load();
+
+            //     Console.WriteLine($"Category: {product.Category?.Name}");
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Category == null");
+            // }
+            // -----------------------------------
+
+            using var dbContext = new ShopContext();
+
+            var category = await (from c in dbContext.Categories where c.CategoryId == 2 select c).FirstOrDefaultAsync();
+
+            if (category != null)
+            {
+                var e = dbContext.Entry(category);
+                e.Collection(c => c.Products).Load();
+
+                Console.WriteLine($"So san pham thuoc danh muc {category.Name}: {category.Products.Count()}");
+                category.Products.ForEach(p => p.PrintInfo());
+            }
+            else
+            {
+                Console.WriteLine("Category == null");
+            }
         }
     }
 }

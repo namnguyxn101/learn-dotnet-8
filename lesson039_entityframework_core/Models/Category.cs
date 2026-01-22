@@ -14,5 +14,8 @@ namespace ef
 
         [Column(TypeName = "ntext")]
         public string? Description { get; set; }
+
+        // Collect Navigation
+        public List<Product> Products { get; set; } = [];
     }
 }
