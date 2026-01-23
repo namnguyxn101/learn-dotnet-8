@@ -71,10 +71,21 @@ namespace ef
                       .OnDelete(DeleteBehavior.Cascade)
                       .HasConstraintName("FK_Products_Categories");
             });
+
+            // One-to-One
+            modelBuilder.Entity<CategoryDetail>(entity =>
+            {
+                entity.HasOne(cd => cd.Category)
+                      .WithOne(c => c.CategoryDetail)
+                      .HasForeignKey<CategoryDetail>(cd => cd.CategoryDetailID)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
         }
 
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<CategoryDetail> CategoryDetail { get; set; }
     }
 }

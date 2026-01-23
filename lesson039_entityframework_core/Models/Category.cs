@@ -17,5 +17,7 @@ namespace ef
 
         // Collect Navigation
         public List<Product> Products { get; set; } = [];
+
+        public CategoryDetail? CategoryDetail { get; set; }
     }
 }
