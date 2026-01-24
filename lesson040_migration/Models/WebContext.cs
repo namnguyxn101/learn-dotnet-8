@@ -12,14 +12,14 @@ namespace MigrationDemo
             Password = Password123;
             TrustServerCertificate = true;
         ";
-        
+
         public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
         {
             builder.AddFilter(DbLoggerCategory.Database.Command.Name, LogLevel.Information)
                    .AddFilter(DbLoggerCategory.Query.Name, LogLevel.Information)
                    .AddConsole();
         });
-        
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -31,17 +31,17 @@ namespace MigrationDemo
         {
             base.OnModelCreating(modelBuilder);
 
-            // modelBuilder.Entity<ArticleTag>(entity =>
-            // {
-            //     entity.HasIndex(at => new { at.ArticleID, at.TagID})
-            //           .IsUnique();
-            // });
+            modelBuilder.Entity<ArticleTag>(entity =>
+            {
+                entity.HasIndex(at => new { at.ArticleID, at.TagID })
+                      .IsUnique();
+            });
         }
-        
+
         public DbSet<Article> Articles { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
 
-        // public DbSet<ArticleTag> ArticleTags { get; set; }
+        public DbSet<ArticleTag> ArticleTags { get; set; }
     }
 }

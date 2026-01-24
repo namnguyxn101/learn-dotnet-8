@@ -49,3 +49,15 @@ dotnet ef database update [migration-name]
 ```bash
 dotnet ef database drop -f
 ```
+Để xem các câu truy vấn từ các migration, chạy lệnh:
+```bash
+dotnet ef migrations script
+```
+Để xem các câu truy vấn migration từ migration-name-1 đến migration-name-2, chạy lệnh:
+```bash
+dotnet ef migrations script [migration-name-1] [migration-name-2]
+```
+Muốn lưu các lệnh sql này ra file .sql, chạy lệnh
+```bash
+dotnet ef migrations script -o sql-file.sql
+```
