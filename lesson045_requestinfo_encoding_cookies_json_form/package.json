@@ -1,0 +1,39 @@
+{
+  "name": "lesson045_requestinfo_encoding_cookies_json_form",
+  "version": "1.0.0",
+  "main": "index.js",
+  
+  "watch": {
+    "build": "src/scss/site.scss"
+  },
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "npm-watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "copy-webpack-plugin": "^13.0.1",
+    "cross-env": "^10.1.0",
+    "css-loader": "^7.1.3",
+    "cssnano": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "jquery": "^3.6.0",
+    "mini-css-extract-plugin": "^2.10.0",
+    "node-sass": "^9.0.0",
+    "npm-watch": "^0.13.0",
+    "popper.js": "^1.16.1",
+    "postcss-loader": "^8.2.0",
+    "postcss-preset-env": "^11.1.2",
+    "sass-loader": "^16.0.6"
+  }
+}
