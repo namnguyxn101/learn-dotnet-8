@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
@@ -41,7 +43,23 @@ app.MapGet("/cookies", async (context) =>
 
 app.MapGet("/json", async (context) =>
 {
-    await context.Response.WriteAsync("Json");
+    var menu = HtmlHelper.MenuTop(
+        HtmlHelper.DefaultMenuTopItems(),
+        context.Request
+    );
+
+    var p = new
+    {
+        Name = "Dong ho Abc",
+        Price = 5000000,
+        ManufactoringDate = new DateTime(2000, 12, 31)
+    };
+
+    context.Response.ContentType = "application/json";
+
+    var json = JsonConvert.SerializeObject(p);
+
+    await context.Response.WriteAsync(json);
 });
 
 app.MapGet("/form", async (context) =>
