@@ -33,7 +33,10 @@ app.MapGet("/request-info", async (context) =>
 
 app.MapGet("/encoding", async (context) =>
 {
-    await context.Response.WriteAsync("Encoding");
+    string menu = HtmlHelper.MenuTop(HtmlHelper.DefaultMenuTopItems(), context.Request);
+    string htmlec = RequestProcess.Encoding(context.Request).HtmlTag("div", "container");
+    string html = HtmlHelper.HtmlDocument("Encoding", menu + htmlec);
+    await context.Response.WriteAsync(html);
 });
 
 app.MapGet("/cookies/{*action}", async (string? action, HttpContext context) =>
@@ -54,9 +57,9 @@ app.MapGet("/cookies/{*action}", async (string? action, HttpContext context) =>
         var option = new CookieOptions()
         {
             Path = "/",
-            Expires = DateTime.Now.AddDays(1)  
+            Expires = DateTime.Now.AddDays(1)
         };
-        
+
         context.Response.Cookies.Append("MaSanPham", "1lk2nvkfsajo234lk", option);
         message = "Cookie duoc ghi";
     }

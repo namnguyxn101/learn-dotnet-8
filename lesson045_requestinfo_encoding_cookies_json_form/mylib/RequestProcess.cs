@@ -1,7 +1,34 @@
 using System.Text;
+using System.Text.Encodings.Web;
 
 public static class RequestProcess
 {
+    public static string Encoding(HttpRequest request)
+    {
+        Microsoft.Extensions.Primitives.StringValues data;
+        bool existdatavalue = request.Query.TryGetValue("data", out data);
+        string? datavalue = existdatavalue ? data.FirstOrDefault() : "không có giá trị";
+
+        Microsoft.Extensions.Primitives.StringValues e;
+        bool existevalue = request.Query.TryGetValue("e", out e);
+        string? evalue = existevalue ? e.FirstOrDefault() : "không có giá trị";
+
+        string? dataout;
+        if (evalue == "0")
+        {
+            // Không encode dữ liệu xuất
+            dataout = datavalue;
+        }
+        else
+        {
+            // encode dữ liệu xuất
+            dataout = HtmlEncoder.Default.Encode(datavalue!);
+        }
+        string encoding_huongdan = File.ReadAllText("encoding.html");
+
+        return dataout?.HtmlTag("div", "alert alert-danger") + encoding_huongdan;
+    }
+
     public static string ProcessForm(HttpRequest request)
     {
         string hovaten = "";
