@@ -2,6 +2,57 @@ using System.Text;
 
 public static class RequestProcess
 {
+    public static string ProcessForm(HttpRequest request)
+    {
+        string hovaten = "";
+        bool luachon = false;
+        string email = "";
+        string password = "";
+        string thongbao = "";
+
+        if (request.Method == "POST")
+        {
+            IFormCollection _form = request.Form;
+
+            email = _form["email"].FirstOrDefault() ?? "";
+            hovaten = _form["hovaten"].FirstOrDefault() ?? "";
+            password = _form["password"].FirstOrDefault() ?? "";
+            luachon = _form["luachon"].FirstOrDefault() == "on";
+
+            thongbao = $@"Dữ liệu post - email: {email}
+                - hovaten: {hovaten} - password: {password}
+                - luachon: {luachon}";
+
+            // var filePath = Path.GetTempFileName();
+            // Xử lý nếu có file upload (hình ảnh,  ... )
+            if (_form.Files.Count > 0)
+            {
+                string thongbaofile = "Các file đã upload: ";
+                foreach (IFormFile formFile in _form.Files)
+                {
+                    if (formFile.Length > 0)
+                    {
+                        var filePath = "wwwroot/upload/" + formFile.FileName;    // Lấy tên  file
+                        if (!Directory.Exists("wwwroot/upload/")) Directory.CreateDirectory("wwwroot/upload/");
+                        thongbaofile += $"{filePath} {formFile.Length} bytes";
+                        using (var stream = new FileStream(filePath, FileMode.Create)) // Mở stream để lưu file, lưu file ở thư mục wwwroot/upload/
+                        {
+                            formFile.CopyTo(stream);
+                        }
+                    }
+
+                }
+                thongbao += "<br>" + thongbaofile;
+            }
+        }
+
+        var format = File.ReadAllText("formtest.html");
+
+        var html = string.Format(format, hovaten, email, luachon ? "checked" : "") + thongbao;
+
+        return html.HtmlTag("div", "container mt-4");
+    }
+
     public static string RequestInfo(HttpRequest request)
     {
         var sb = new StringBuilder();

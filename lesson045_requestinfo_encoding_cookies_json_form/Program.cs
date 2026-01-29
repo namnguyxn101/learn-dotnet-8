@@ -96,9 +96,18 @@ app.MapGet("/json", async (context) =>
     await context.Response.WriteAsync(json);
 });
 
-app.MapGet("/form", async (context) =>
+app.MapMethods("/form", ["POST", "GET"], async (context) =>
 {
-    await context.Response.WriteAsync("Form");
+    var menu = HtmlHelper.MenuTop(
+        HtmlHelper.DefaultMenuTopItems(),
+        context.Request
+    );
+
+    var formHtml = RequestProcess.ProcessForm(context.Request);
+
+    var html = HtmlHelper.HtmlDocument("Test submit form html", menu + formHtml);
+
+    await context.Response.WriteAsync(html);
 });
 
 app.Run();
