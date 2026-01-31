@@ -1,14 +1,17 @@
 using System.Text;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddOptions();
+builder.Services.Configure<TestOptions>(builder.Configuration.GetSection("TestOptions"));
+
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/show-options", async (context) =>
 {
-    var configuration = context.RequestServices.GetService<IConfiguration>();
-
-    var testOptions = configuration?.GetSection("TestOptions").Get<TestOptions>();
+    var testOptions = context.RequestServices.GetService<IOptions<TestOptions>>()?.Value;
 
     var stringBuilder = new StringBuilder();
 
