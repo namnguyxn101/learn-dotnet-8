@@ -1,5 +1,9 @@
 @page "/trang-dau-tien/{solanlap:int?}"
 @model FirstPageModel
+@{
+    Layout = "_MyLayout";
+    ViewData["Title"] = "Trang dau tien";
+}
 
 <h1 style="color: red">@Model.Title</h1>
 <h2>@ViewData["mydata"]</h2>
