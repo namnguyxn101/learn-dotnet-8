@@ -1,7 +1,6 @@
 @page "/trang-dau-tien/{solanlap:int?}"
 @model FirstPageModel
 @{
-    Layout = "_MyLayout";
     ViewData["Title"] = "Trang dau tien";
 }
 
@@ -56,3 +55,5 @@
 </ol>
 
 <p>@Model.Welcome("Phuong Nam")</p>
+
+<a asp-page="SecondPage">Trang thu hai</a>
