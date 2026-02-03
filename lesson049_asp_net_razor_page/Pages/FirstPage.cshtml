@@ -1,5 +1,8 @@
 @page "/trang-dau-tien/{solanlap:int?}"
-<h1 style="color: red">@Title</h1>
+@model FirstPageModel
+
+<h1 style="color: red">@Model.Title</h1>
+<h2>@ViewData["mydata"]</h2>
 <p>Hoc lap trinh ASP.Net Core (<strong>@System.DateTime.Now</strong>)</p>
 
 @{
@@ -15,12 +18,28 @@
 }
 
 @functions {
-    string Title { get; set; } = "Day la trang Razor Page dau tien";
+    @* string Title { get; set; } = "Day la trang Razor Page dau tien";
+
+    // OnGet(), OnGetAbc(), OnGetXyz(), ...
+    // OnPost(), OnPostAbc(), ...
+    // Gọi là Handler
+    public void OnGet()
+    {
+        Console.WriteLine("Truy van GET");
+        ViewData["mydata"] = "Phuong Nam 2026";
+    }
+
+    // GET-Url?handler=Xyz
+    public void OnGetXyz()
+    {
+        Console.WriteLine("Truy van GET co query la handler=Xyz");
+        ViewData["mydata"] = "Phuong Nam 2026";
+    }
 
     string Welcome(string name)
     {
         return $"Chao mung {name}";
-    }
+    } *@
 }
 
 <p>Tong cua @a va @b la @(a + b)</p>
@@ -32,4 +51,4 @@
     }
 </ol>
 
-<p>@Welcome("Phuong Nam")</p>
+<p>@Model.Welcome("Phuong Nam")</p>
