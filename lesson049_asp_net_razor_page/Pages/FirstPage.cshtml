@@ -1,5 +1,5 @@
 @page "/trang-dau-tien/{solanlap:int?}"
-<h1 style="color: red">Day la trang Razor Page dau tien</h1>
+<h1 style="color: red">@Title</h1>
 <p>Hoc lap trinh ASP.Net Core (<strong>@System.DateTime.Now</strong>)</p>
 
 @{
@@ -14,6 +14,15 @@
     <p>Can bac 2 cua @a la @(Math.Sqrt(a))</p>
 }
 
+@functions {
+    string Title { get; set; } = "Day la trang Razor Page dau tien";
+
+    string Welcome(string name)
+    {
+        return $"Chao mung {name}";
+    }
+}
+
 <p>Tong cua @a va @b la @(a + b)</p>
 
 <ol>
@@ -22,3 +31,5 @@
         <li>Muc thu @i</li>
     }
 </ol>
+
+<p>@Welcome("Phuong Nam")</p>
