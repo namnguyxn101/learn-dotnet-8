@@ -3,12 +3,16 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    ViewData["title_message"] = "San pham moi";
+    ViewData["content"] = "Ban dang xem cac san pham moi";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@await Html.PartialAsync("_Message")
 
 @{
     var product1 = new Product() { Name = "iPhone X", Description = "Dien thoai iPhone cua Apple ...", Price = 1000 };
