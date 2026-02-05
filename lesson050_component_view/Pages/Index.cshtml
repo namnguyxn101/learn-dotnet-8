@@ -7,10 +7,18 @@
     ViewData["content"] = "Ban dang xem cac san pham moi";
 }
 
+<form method="post">
+    <label>Nhap ten cua ban</label>
+    <input type="text" name="username" id="">
+    <input type="submit" value="Gui">
+</form>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@await Component.InvokeAsync("ProductBox", false)
 
 @await Html.PartialAsync("_Message")
 
@@ -41,10 +49,10 @@
     @{
         var products = new List<Product>()
         {
-        new Product() { Name = "SP1", Description = "Mo ta cho SP 1", Price = 900},
-        new Product() { Name = "SP2", Description = "Mo ta cho SP 2", Price = 100},
-        new Product() { Name = "SP3", Description = "Mo ta cho SP 3", Price = 400},
-        new Product() { Name = "SP4", Description = "Mo ta cho SP 4", Price = 200},
+            new Product() { Name = "SP1", Description = "Mo ta cho SP 1", Price = 900},
+            new Product() { Name = "SP2", Description = "Mo ta cho SP 2", Price = 100},
+            new Product() { Name = "SP3", Description = "Mo ta cho SP 3", Price = 400},
+            new Product() { Name = "SP4", Description = "Mo ta cho SP 4", Price = 200},
         };
 
         foreach (var product in products)

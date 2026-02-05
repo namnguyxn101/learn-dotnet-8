@@ -1,0 +1,17 @@
+@using XTLAB
+
+@* @model string
+
+<h1>@Model</h1> *@
+@* ------------------------- *@
+
+@model List<Product>
+
+<div class="list-group">
+    @foreach (var product in Model)
+    {
+        <li class="list-group-item">
+            @product.Name (<strong>@product.Price</strong>)
+        </li>
+    }
+</div>
