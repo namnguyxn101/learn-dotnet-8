@@ -1,5 +1,6 @@
 ﻿@page
 @model IndexModel
+@addTagHelper *, lesson051_taghelper_htmlhelper
 @{
     ViewData["Title"] = "Home page";
 }
@@ -22,3 +23,13 @@
     @Html.Label("Username")
     @Html.TextBox("Username") *@
 </form>
+
+@{
+    var productlist = new List<String> {
+        "Tên Sản phẩm 1",
+        "Tên Sản phẩm 2",
+        "Tên Sản phẩm 3"
+     };
+}
+<mylist list-title="Danh sách sản phẩm" list-items="@productlist">
+</mylist>
