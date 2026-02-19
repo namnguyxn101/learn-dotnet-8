@@ -1,4 +1,4 @@
-# Tag Helper
+# Tag Helper, Html Helper
 ## Một số Tag Helper
 ### Anchor
 **Anchor Tag Helper** cải tiến thẻ `<a>`, bằng cách thêm vào các thuộc tính, các thuộc tính này bắt đầu bằng tiền tố **asp-**. Từ các thuộc tính **asp-**, nó sinh ra giá trị cho thuộc tính **href**, một số thuộc tính đó là:
@@ -61,3 +61,83 @@ Làm việc trên thẻ `<select>`, ví dụ:
 
 ### Textarea
 Làm việc trên thẻ `<textarea>` với thuộc tính asp-for="s"
+
+## Một số phương thức Html Helper
+### Raw(string)
+Giữ nguyên thẻ HTML (không thực hiện encoding), vì mặc định khi xuất một giá trị (**@value**) thì nó sẽ encoding rồi xuất
+
+### Value(expression, format)
+Xuất giá trị tên **expression** (tên liên quan tới model) với chuỗi định dạng [format](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting?redirectedfrom=MSDN)
+
+### Encode(value)
+Thực hiện Encode chuỗi value.
+
+### ActionLink
+Tạo thẻ `<a>` cho các action của controller.
+
+### AntiForgeryToken
+Tạo phần tử ẩn, nếu trong Form - khi form submit thì nó được kiểm tra, để đảm bảo form được gửi đến từ mã Html do ứng dụng phát sinh
+
+### BeginForm
+Dựng HTML Form trong MVC
+```cs
+@using (Html.BeginForm(FormMethod.Post))
+{
+    // Các phần tử
+}
+```
+
+### BeginRouteForm
+Dựng HTML Form trong MVC, action theo Route
+
+### CheckBox, CheckBoxFor
+`CheckBox(expression, isChecked, htmlAttributes)`, Tạo phần tử Html `<input>` kiểu checkbox, expression chuỗi biểu thức phần tử Model
+
+### Display(expression), DislayFor
+Dựng HTML cho phần tử Model expression
+
+### DisplayName(expression), DisplayNameFor
+Lấy tên expression, tên thiết lập bằng `[Display]`
+
+### DropDownList, DropDownListFor
+`DropDownList(expression, selectList, optionLabel, htmlAttributes)` tạo phần tử Select
+```cs
+@Html.DropDownList("thanhpho",
+    new SelectList(new string[] {"Hà Nội", "Sài Gòn"}));
+```
+
+### Editor(expression), EditorFor
+Tạo control (phần tử input) cho expression (kiểu quy định type của input)
+
+### Hidden(expression), HiddenFor
+Tạo input có kiểu hidden
+
+### Label(expression), LabelFor
+Tạo phần tử `<label>`
+
+### ListBox, ListBoxFor
+Tạo html select - dùng giống DropDownList
+
+### PartialAsync
+Dựng Html từ Partial
+
+### RenderPartialAsync
+Dựng Html từ Partial
+
+### Password, PasswordFor
+Tạo `<input>` nhập password
+
+### RadioButton(expression, value), RadioButtonFor
+Tạo `<input>` kiểu radiobutton
+
+### TextArea, TextAreaFor
+`TextArea(expression, value, rows, columns, htmlAttributes)` Tạo `<textarea>`
+
+### TextBox, TextBoxFor
+`TextBox(expression, value, format, htmlAttributes)` Tạo `<input>` kiểu text
+
+### ValidationMessage
+`ValidationMessage (expression, message, htmlAttributes, tag)` Trả về HTML thông báo lỗi kiểm tra Model
+
+### ValidationSummary
+Trả về HTML phần tử ul, các thông báo lỗi kiểm tra Model
